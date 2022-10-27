@@ -1,0 +1,94 @@
+Flutter crash report.
+Please report a bug at https://github.com/flutter/flutter/issues.
+
+## command
+
+flutter --no-color run --machine --track-widget-creation --device-id=chrome --start-paused --dart-define=flutter.inspector.structuredErrors=true lib/main.dart
+
+## exception
+
+NoSuchMethodError: NoSuchMethodError: The method '[]' was called on null.
+Receiver: null
+Tried calling: []("properties")
+
+```
+#0      Object.noSuchMethod (dart:core-patch/object_patch.dart:38:5)
+#1      ChromeProxyService._handleDeveloperLog (package:dwds/src/services/chrome_proxy_service.dart:923:45)
+#2      ChromeProxyService._setUpChromeConsoleListeners.<anonymous closure> (package:dwds/src/services/chrome_proxy_service.dart:906:11)
+#3      ChromeProxyService._setUpChromeConsoleListeners.<anonymous closure> (package:dwds/src/services/chrome_proxy_service.dart:878:50)
+#4      _rootRunUnary (dart:async/zone.dart:1434:47)
+#5      _CustomZone.runUnary (dart:async/zone.dart:1335:19)
+#6      _CustomZone.runUnaryGuarded (dart:async/zone.dart:1244:7)
+#7      CastStreamSubscription._onData (dart:_internal/async_cast.dart:85:11)
+#8      _rootRunUnary (dart:async/zone.dart:1434:47)
+#9      _CustomZone.runUnary (dart:async/zone.dart:1335:19)
+#10     _CustomZone.runUnaryGuarded (dart:async/zone.dart:1244:7)
+#11     _BufferingStreamSubscription._sendData (dart:async/stream_impl.dart:341:11)
+#12     _BufferingStreamSubscription._add (dart:async/stream_impl.dart:271:7)
+#13     _SinkTransformerStreamSubscription._add (dart:async/stream_transformers.dart:63:11)
+#14     _EventSinkWrapper.add (dart:async/stream_transformers.dart:13:11)
+#15     WipDomain.eventStream.<anonymous closure>.<anonymous closure> (package:webkit_inspection_protocol/webkit_inspection_protocol.dart:287:22)
+#16     _HandlerEventSink.add (dart:async/stream_transformers.dart:209:17)
+#17     _SinkTransformerStreamSubscription._handleData (dart:async/stream_transformers.dart:111:24)
+#18     _rootRunUnary (dart:async/zone.dart:1434:47)
+#19     _CustomZone.runUnary (dart:async/zone.dart:1335:19)
+#20     _CustomZone.runUnaryGuarded (dart:async/zone.dart:1244:7)
+#21     _BufferingStreamSubscription._sendData (dart:async/stream_impl.dart:341:11)
+#22     _DelayedData.perform (dart:async/stream_impl.dart:591:14)
+#23     _StreamImplEvents.handleNext (dart:async/stream_impl.dart:706:11)
+#24     _PendingEvents.schedule.<anonymous closure> (dart:async/stream_impl.dart:663:7)
+#25     _rootRun (dart:async/zone.dart:1418:47)
+#26     _CustomZone.run (dart:async/zone.dart:1328:19)
+#27     _CustomZone.runGuarded (dart:async/zone.dart:1236:7)
+#28     _CustomZone.bindCallbackGuarded.<anonymous closure> (dart:async/zone.dart:1276:23)
+#29     _rootRun (dart:async/zone.dart:1426:13)
+#30     _CustomZone.run (dart:async/zone.dart:1328:19)
+#31     _CustomZone.runGuarded (dart:async/zone.dart:1236:7)
+#32     _CustomZone.bindCallbackGuarded.<anonymous closure> (dart:async/zone.dart:1276:23)
+#33     _microtaskLoop (dart:async/schedule_microtask.dart:40:21)
+#34     _startMicrotaskLoop (dart:async/schedule_microtask.dart:49:5)
+#35     _runPendingImmediateCallback (dart:isolate-patch/isolate_patch.dart:122:13)
+#36     _RawReceivePortImpl._handleMessage (dart:isolate-patch/isolate_patch.dart:193:5)
+```
+
+## flutter doctor
+
+```
+[✓] Flutter (Channel stable, 3.0.5, on macOS 12.4 21F79 darwin-x64, locale pt-BR)
+    • Flutter version 3.0.5 at /Users/newpointer/flutter
+    • Upstream repository https://github.com/flutter/flutter.git
+    • Framework revision f1875d570e (3 months ago), 2022-07-13 11:24:16 -0700
+    • Engine revision e85ea0e79c
+    • Dart version 2.17.6
+    • DevTools version 2.12.2
+
+[✓] Android toolchain - develop for Android devices (Android SDK version 33.0.0-rc4)
+    • Android SDK at /Users/newpointer/Library/Android/sdk
+    • Platform android-33, build-tools 33.0.0-rc4
+    • Java binary at: /Applications/Android Studio.app/Contents/jre/Contents/Home/bin/java
+    • Java version OpenJDK Runtime Environment (build 11.0.12+0-b1504.28-7817840)
+    • All Android licenses accepted.
+
+[✓] Xcode - develop for iOS and macOS (Xcode 13.4.1)
+    • Xcode at /Applications/Xcode.app/Contents/Developer
+    • CocoaPods version 1.11.3
+
+[✓] Chrome - develop for the web
+    • Chrome at /Applications/Google Chrome.app/Contents/MacOS/Google Chrome
+
+[✓] Android Studio (version 2021.2)
+    • Android Studio at /Applications/Android Studio.app/Contents
+    • Flutter plugin can be installed from:
+      🔨 https://plugins.jetbrains.com/plugin/9212-flutter
+    • Dart plugin can be installed from:
+      🔨 https://plugins.jetbrains.com/plugin/6351-dart
+    • Java version OpenJDK Runtime Environment (build 11.0.12+0-b1504.28-7817840)
+
+[✓] Connected device (1 available)
+    • Chrome (web) • chrome • web-javascript • Google Chrome 106.0.5249.119
+
+[✓] HTTP Host Availability
+    • All required HTTP hosts are available
+
+• No issues found!
+```

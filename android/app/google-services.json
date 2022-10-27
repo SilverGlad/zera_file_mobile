@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "797997951909",
+    "project_id": "zera-fila",
+    "storage_bucket": "zera-fila.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:797997951909:android:839694c3623a966089564c",
+        "android_client_info": {
+          "package_name": "com.newpointer.zera_fila"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "797997951909-8hms8hs2b09gvi3r22d8vimbnhiire46.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB7y5XLRIHvO6b5KbxR5zhmTPjKs2tN3AU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "797997951909-8hms8hs2b09gvi3r22d8vimbnhiire46.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "797997951909-j1t7j3odu3kc4hauh902opd7niebjc8o.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "ggjgh"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

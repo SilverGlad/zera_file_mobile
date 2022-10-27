@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: :cmbsdklib-release:@aar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/ada6fc218dfb83dd6024117370cd209e/transformed/jetified-cmbsdklib-release/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/ada6fc218dfb83dd6024117370cd209e/transformed/jetified-cmbsdklib-release/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/ada6fc218dfb83dd6024117370cd209e/transformed/jetified-cmbsdklib-release/AndroidManifest.xml" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

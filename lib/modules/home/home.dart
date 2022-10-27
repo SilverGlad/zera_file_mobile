@@ -1,7 +1,9 @@
 import 'dart:async';
 import 'dart:developer';
-import 'dart:html' as html;
+
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+
 import '../../core/data/local/shared_preferences.dart';
 import '../../core/utils/colors.dart';
 import '../../core/utils/constants.dart';
@@ -25,7 +27,6 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
   var _scaffoldKey = GlobalKey<ScaffoldState>();
   var hasLogin = false;
   TabController _tabController;
-  DefaultTabController _defaultTabController;
   var _tabScreenList = <Widget>[];
   var _tabs = <Tab>[];
   var currentIndex = 0;
@@ -38,12 +39,12 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
   void initState() {
     super.initState();
     _checkLoginState();
-    _checkPushPermission();
+
     _restaurantPageView.openEnterDialog = () {
       _startLoginFlow();
     };
 
-    _tabController = TabController(length: 3, vsync: this);//_provideTabController();
+    _tabController = _provideTabController();
     _tabController.addListener(() {
       switch (_tabController.index) {
         case 0:
@@ -62,12 +63,6 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
     Timer(Duration(milliseconds: 600), () {
       _tabController.animateTo(widget.moveTo);
     });
-  }
-
-  _checkPushPermission() async {
-    var pushPermission = await html.window.navigator.permissions.query(
-        {"name": "push"});
-    print('push permission: ${pushPermission.state}');
   }
 
   @override
@@ -100,15 +95,11 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
   Widget build(BuildContext context) {
     _tabs = _provideTabList(context);
 
-    return DefaultTabController(
-      length: 3,
-      initialIndex: 0,
-      child: Scaffold(
-        key: _scaffoldKey,
-        appBar: _buildAppBar(context),
-        backgroundColor: colorBackground,
-        body: _buildBody(context),
-      ),
+    return Scaffold(
+      key: _scaffoldKey,
+      appBar: _buildAppBar(context),
+      backgroundColor: colorBackground,
+      body: _buildBody(context),
     );
   }
 
@@ -136,13 +127,12 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
   }
 
   Widget _buildBody(BuildContext context) {
-    // _tabController.addListener(() {
-    //   setState(() {
-    //     currentIndex = _tabController.index;
-    //   });
-    // });
+    _tabController.addListener(() {
+      setState(() {
+        currentIndex = _tabController.index;
+      });
+    });
 
-    _checkLoginState();
     return Container(
       height: double.infinity,
       width: double.infinity,
@@ -158,7 +148,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
   Widget _buildPageView() {
     return TabBarView(
       physics: hasLogin ? null : NeverScrollableScrollPhysics(),
-      //controller: _tabController,
+      controller: _tabController,
       children: _provideTabScreenList(),
     );
   }
@@ -229,7 +219,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
         borderRadius: BorderRadius.circular(12),
         border: Border.all(color: Colors.white),
       ),
-      //controller: _tabController,
+      controller: _tabController,
       tabs: _tabs,
     );
   }
@@ -260,9 +250,8 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
         child: LoginScreen(
           scaffoldKey: _scaffoldKey,
           loginCompleted: () {
-            setState(() {
-              _checkLoginState();
-            });
+            Navigator.pop(context);
+            _checkLoginState();
           },
           registerNewAccount: () async {
             Navigator.pop(context);
@@ -282,10 +271,8 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
   _checkLoginState() async {
     log("login checked");
     var hasUserLogged = await SharedPreferencesUtils.hasUserLogged();
-    if (hasUserLogged != hasLogin) {
-      setState(() {
-        hasLogin = hasUserLogged;
-      });
-    }
+    setState(() {
+      hasLogin = hasUserLogged;
+    });
   }
 }

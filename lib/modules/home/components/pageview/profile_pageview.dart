@@ -113,38 +113,38 @@ class _ProfilePageViewState extends State<ProfilePageView> {
               style: TextStyle(fontSize: 14, fontWeight: fontWeightMedium),
             ),
           ),
-          // Padding(
-          //   padding: const EdgeInsets.symmetric(vertical: 16.0),
-          //   child: RaisedButton(
-          //     color: colorPrimary,
-          //     elevation: 2,
-          //     shape: RoundedRectangleBorder(
-          //       borderRadius: BorderRadius.circular(12),
-          //       side: BorderSide(color: Colors.transparent),
-          //     ),
-          //     onPressed: () {
-          //       Navigator.of(context).push(
-          //         MaterialPageRoute(
-          //           builder: (context) => Fidelity(),
-          //         ),
-          //       );
-          //     },
-          //     textColor: Colors.white,
-          //     child: Row(
-          //       children: [
-          //         Padding(
-          //           padding: const EdgeInsets.only(right: 16.0),
-          //           child: Icon(Icons.card_giftcard),
-          //         ),
-          //         Text(
-          //           "Programas de fidelidade",
-          //           textAlign: TextAlign.center,
-          //           style: TextStyle(fontSize: 14, fontWeight: fontWeightMedium),
-          //         ),
-          //       ],
-          //     ),
-          //   ),
-          // ),
+          Padding(
+            padding: const EdgeInsets.symmetric(vertical: 16.0),
+            child: RaisedButton(
+              color: colorPrimary,
+              elevation: 2,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(12),
+                side: BorderSide(color: Colors.transparent),
+              ),
+              onPressed: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (context) => Fidelity(),
+                  ),
+                );
+              },
+              textColor: Colors.white,
+              child: Row(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.only(right: 16.0),
+                    child: Icon(Icons.card_giftcard),
+                  ),
+                  Text(
+                    "Programas de fidelidade",
+                    textAlign: TextAlign.center,
+                    style: TextStyle(fontSize: 14, fontWeight: fontWeightMedium),
+                  ),
+                ],
+              ),
+            ),
+          ),
           Visibility(
             visible: false,
             child: RaisedButton(

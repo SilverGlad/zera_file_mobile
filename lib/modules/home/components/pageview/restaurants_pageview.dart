@@ -6,10 +6,8 @@ import '../../../../core/data/model/establishment.dart';
 import '../../../../core/data/request/establishment_request.dart';
 import '../../../../core/utils/colors.dart';
 import '../../../../core/utils/constants.dart';
-import '../../../../core/utils/loc.dart';
 import '../../../../generated/l10n.dart';
 import '../../../establishment_detail/establishment_detail.dart';
-
 import '../establishment_list_item.dart';
 
 class RestaurantsPageView extends StatefulWidget {
@@ -54,7 +52,6 @@ class _RestaurantsPageViewState extends State<RestaurantsPageView> with Automati
     var checkPermission = await Geolocator.checkPermission();
     var serviceEnabled = await Geolocator.isLocationServiceEnabled();
 
-
     if ((checkPermission == LocationPermission.always || checkPermission == LocationPermission.whileInUse) && serviceEnabled) {
       var position = await Geolocator.getCurrentPosition(desiredAccuracy: LocationAccuracy.high);
 
@@ -73,6 +70,7 @@ class _RestaurantsPageViewState extends State<RestaurantsPageView> with Automati
   void _askPermission() async {
     var checkPermission = await Geolocator.checkPermission();
     var serviceEnabled = await Geolocator.isLocationServiceEnabled();
+
     if (checkPermission == LocationPermission.denied) {
       await Geolocator.requestPermission();
     } else if (checkPermission == LocationPermission.deniedForever) {
@@ -197,10 +195,7 @@ class _RestaurantsPageViewState extends State<RestaurantsPageView> with Automati
           latitude: _locLatitude,
           longitude: _locLongitude,
         ),
-        unique: false,
-        idUnique: '',
       );
-      log('Response: ${response.restaurantes.length}');
 
       setState(() {
         if (response.restaurantes != null && response.restaurantes.isNotEmpty) {
@@ -209,6 +204,7 @@ class _RestaurantsPageViewState extends State<RestaurantsPageView> with Automati
         } else {
           _errorMessage = response.mensagem != null && response.mensagem.isNotEmpty ? response.mensagem : "Nenhum restaurante encontrado.";
         }
+
         _loadingData = false;
       });
     } catch (error) {

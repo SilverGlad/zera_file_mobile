@@ -278,6 +278,7 @@ class _OrderCartScreenState extends State<OrderCartScreen> with TickerProviderSt
                           height: 24,
                           child: InkWell(
                             onTap: () {
+                              log("TEste");
                               DialogsUtil.showAlertDialog(
                                   context: context,
                                   message: S.of(context).carrinho_deleteItem_dialogTitle,

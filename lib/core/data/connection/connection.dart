@@ -28,18 +28,14 @@ import '../request/schedule_request.dart';
 import '../request/base_request.dart';
 
 class ConnectionUtils {
-  static const BASE_URL = "https://cors-anywhere-fcrd-main-ogz42r3vfa-wm.a.run.app/zerafila.dyndns.org:7000/datasnap/rest/TSM1";
-  static const PROD_URL = "https://cors-anywhere-fcrd-main-ogz42r3vfa-wm.a.run.app/esitef-ec.softwareexpress.com.br/e-sitef/api";
+  static const BASE_URL = "http://zerafila.dyndns.org:7000/datasnap/rest/TSM1";
+  static const PROD_URL = "https://esitef-ec.softwareexpress.com.br/e-sitef/api";
   static const BASE_AUTH_LOGIN = "TOKEN_AUTENTICACAO_API";
   static const BASE_AUTH_PASSWORD = "123";
 
   static Map<String, String> _provideBasicHeader = {
     "Access-Control-Allow-Origin": "*", // Required for CORS support to work
-    "Access-Control-Allow-Credentials":
-    'true', // Required for cookies, authorization headers with HTTPS
-    "Referrer-Policy": 'no-referrer-when-downgrade',
-    "Access-Control-Allow-Headers":
-    "Origin,Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token,locale",
+    "Access-Control-Allow-Headers": "Origin,Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token,locale",
     "Access-Control-Allow-Methods": "POST, OPTIONS",
     'authorization': 'Basic ' +
         base64Encode(

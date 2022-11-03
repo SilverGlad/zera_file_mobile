@@ -9,7 +9,12 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a4ce6887-0a7d-4c0e-be77-1adacaa19dd2" name="Default Changelist" comment="" />
+    <list default="true" id="a4ce6887-0a7d-4c0e-be77-1adacaa19dd2" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.flutter-plugins-dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins-dependencies" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/zera_fila.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/zera_fila.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/core/data/connection/connection.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/core/data/connection/connection.dart" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -26,12 +31,12 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/lib/modules/establishment_detail/components/order_type.dart" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/lib/modules/order_cart/order_cart.dart" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/lib/modules/establishment_detail/components/scan_comanda.dart" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/flutter_qrscaner-1.0.0/lib/flutter_qrscaner.dart" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/android/app/src/main/AndroidManifest.xml" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/lib/modules/establishment_detail/establishment_detail.dart" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/flutter_qrscaner-1.0.0/lib/flutter_qrscaner.dart" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/lib/modules/establishment_detail/components/scan_comanda.dart" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/lib/modules/establishment_detail/components/order_type.dart" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectId" id="1urgJ7beYiG2UAG3Fk0jSBzkCBi" />
   <component name="ProjectViewState">
